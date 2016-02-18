@@ -15,7 +15,7 @@ public class RaceTrack : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//Read the file and display it line by line
-		System.IO.StreamReader file = new System.IO.StreamReader ("XYZ file address");
+		System.IO.StreamReader file = new System.IO.StreamReader ("C:/Users/Sam/Documents/GitHub/Air-Race/Assets/race2.txt");
 		while ((line = file.ReadLine ()) != null) {
 			Console.WriteLine (line);
 			string[] bits = line.Split(' ');
@@ -23,7 +23,7 @@ public class RaceTrack : MonoBehaviour {
 			new_y = float.Parse (bits[1]);
 			new_z = float.Parse (bits[2]);
 			transform.position.Set (new_x, new_y, new_z);
-			Gizmos.DrawWireSphere (transform.position, explosionRadius);
+			//Gizmos.DrawWireSphere (transform.position, explosionRadius);
 			counter++;
 		}
 		file.Close ();
